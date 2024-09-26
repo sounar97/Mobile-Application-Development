@@ -46,23 +46,20 @@ public class MainActivity extends AppCompatActivity {
                 int pMonth = c.get(Calendar.MONTH);
                 int pDate = c.get(Calendar.DATE);
 
-                DatePickerDialog dialog = new DatePickerDialog(MainActivity.this,
-                        android.R.style.Theme_Material_Light_Dialog,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                                date.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+                DatePickerDialog dialog = new DatePickerDialog(MainActivity.this, android.R.style.Theme_Material_Light_Dialog,
+                        (view, year, month, dayOfMonth) -> {
 
-                                // Accurate age calculation
-                                int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-                                int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
-                                int currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+                            date.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
 
-                                if (month + 1 < currentMonth || (month + 1 == currentMonth && dayOfMonth <= currentDay)) {
-                                    diff = currentYear - year;
-                                } else {
-                                    diff = currentYear - year - 1;
-                                }
+
+                            Calendar currentDate = Calendar.getInstance();
+                            if (year > currentDate.get(Calendar.YEAR) ||
+                                    (year == currentDate.get(Calendar.YEAR) && month + 1 > currentDate.get(Calendar.MONTH) + 1) ||
+                                    (year == currentDate.get(Calendar.YEAR) && month + 1 == currentDate.get(Calendar.MONTH) + 1 && dayOfMonth > currentDate.get(Calendar.DAY_OF_MONTH))) {
+                                Toast.makeText(MainActivity.this, "Please enter a correct date.", Toast.LENGTH_SHORT).show();
+                            } else {
+
+                                diff = currentDate.get(Calendar.YEAR) - year;
                             }
                         }, pYear, pMonth, pDate);
                 dialog.show();
@@ -73,8 +70,9 @@ public class MainActivity extends AppCompatActivity {
     public void checkEligibility(View v) {
         String s_name = name.getText().toString().trim();
         String s_num = num.getText().toString().trim();
+        String s_date = date.getText().toString().trim();
 
-        if (s_name.isEmpty() || s_num.isEmpty()) {
+        if (s_name.isEmpty() || s_num.isEmpty() || s_date.isEmpty()) {
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
             return;
         }
