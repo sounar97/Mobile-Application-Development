@@ -4,19 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#88F19898"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginEnd="133dp"
-        android:layout_marginBottom="543dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textView"
@@ -85,15 +75,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3" />
 
+
     <EditText
         android:id="@+id/dateBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="172dp"
         android:layout_marginBottom="56dp"
-        android:ems="10"
-        android:hint="Enter Date ."
-        android:inputType="text"
+        android:focusable="false"
+        android:hint="Select Date"
         app:layout_constraintBottom_toTopOf="@+id/checkBtn"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -102,8 +92,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
-        android:text="Check"
+        android:backgroundTint="#DA19D7"
         android:onClick="checkEligibility"
+        android:text="Check"
+        android:textColor="#E1EDEB"
+        android:textColorLink="#6A1313"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -114,12 +107,13 @@
         android:layout_height="32dp"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="38dp"
-        android:layout_marginBottom="185dp"
+        android:layout_marginBottom="184dp"
         android:text="Date:"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/dateBox"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
@@ -130,7 +124,19 @@
         android:layout_marginBottom="184dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toEndOf="@+id/dateBox"
         app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="218dp"
+        android:layout_height="207dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/eci" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
