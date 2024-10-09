@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <CheckBox
+        android:id="@+id/Vanilla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="124dp"
+        android:text="Vanilla (100)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/vanillaDecrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@id/Vanilla"
+        app:layout_constraintTop_toTopOf="@id/Vanilla" />
+
+    <TextView
+        android:id="@+id/vanillaQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@id/vanillaDecrease"
+        app:layout_constraintTop_toTopOf="@id/Vanilla" />
+
+    <Button
+        android:id="@+id/vanillaIncrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@id/vanillaQuantity"
+        app:layout_constraintTop_toTopOf="@id/Vanilla" />
+
+    <CheckBox
+        android:id="@+id/Chocolate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="80dp"
+        android:text="Chocolate (150)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Vanilla" />
+
+    <Button
+        android:id="@+id/chocolateDecrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@id/Chocolate"
+        app:layout_constraintTop_toTopOf="@id/Chocolate" />
+
+    <TextView
+        android:id="@+id/chocolateQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@id/chocolateDecrease"
+        app:layout_constraintTop_toTopOf="@id/Chocolate" />
+
+    <Button
+        android:id="@+id/chocolateIncrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@id/chocolateQuantity"
+        app:layout_constraintTop_toTopOf="@id/Chocolate" />
+
+    <CheckBox
+        android:id="@+id/Strawberry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Strawberry (200)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Chocolate" />
+
+    <Button
+        android:id="@+id/strawberryDecrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@id/Strawberry"
+        app:layout_constraintTop_toTopOf="@id/Strawberry" />
+
+    <TextView
+        android:id="@+id/strawberryQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@id/strawberryDecrease"
+        app:layout_constraintTop_toTopOf="@id/Strawberry" />
+
+    <Button
+        android:id="@+id/strawberryIncrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@id/strawberryQuantity"
+        app:layout_constraintTop_toTopOf="@id/Strawberry" />
+
+    <Button
+        android:id="@+id/dateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:text="Select Date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Strawberry" />
+
+    <Button
+        android:id="@+id/timeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Select Time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.828"
+        app:layout_constraintStart_toEndOf="@id/dateButton"
+        app:layout_constraintTop_toBottomOf="@id/Strawberry" />
+
+    <Button
+        android:id="@+id/orderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Place Order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dateButton" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="150dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="sans-serif"
+        android:includeFontPadding="false"
+        android:text="Bakery"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/Vanilla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
